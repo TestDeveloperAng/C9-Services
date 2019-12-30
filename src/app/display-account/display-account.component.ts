@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-display-account',
@@ -8,13 +8,19 @@ import { Component, OnInit,Input } from '@angular/core';
 export class DisplayAccountComponent implements OnInit {
 
   @Input() accountDetails;
+  @Input() i;
+  @Output() statusChanged = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
-  onstatusChange(eventData : Event){
-    console.log(eventData);
+  onstatusChange(eventData){
+    console.log(eventData.target);
+    // this.statusChanged.emit({
+    //   id  : this.target.id
+    // })
+    // console.log(eventData.target.value);
   }
 
 }

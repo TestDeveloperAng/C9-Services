@@ -5,9 +5,9 @@
     <!-- <button class="btn btn-sm btn-primary">Change Status</button> -->
     <div class="form-group">
       <label for="changeStatus" class="text-danger font-weight-bold">Change Status</label>
-      <select name="changeStatus" id="changeStatus" class="form-control" (change)="onstatusChange($event)">
+      <select name="changeStatus"  [id]="i" class="form-control" (change)="onstatusChange($event)">
         <option value="active">Active</option>
-        <option value="inactive">Inactive</option>
+        <option value="inactive" [id]="i">Inactive</option>
       </select>
     </div>
   </div>

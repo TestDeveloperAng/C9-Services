@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-12">
     <h4>Account Details</h4>
-    <app-display-account *ngFor="let account of accounts" [accountDetails]="account"></app-display-account>
+    <app-display-account *ngFor="let account of accounts; let i = index" [accountDetails]="account"></app-display-account>
    </div>
   </div>
 </div>
