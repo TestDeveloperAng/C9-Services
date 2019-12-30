@@ -1,5 +1,10 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-12"></div>
-	</div>
+
+      <app-create-account></app-create-account>
+
+  <div class="row">
+    <div class="col-md-12">
+    <app-display-account *ngFor="let account of accounts" [accountDetails]="account"></app-display-account>
+   </div>
+  </div>
 </div>

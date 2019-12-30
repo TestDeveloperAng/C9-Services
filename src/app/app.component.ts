@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
+
+  accounts =  [
+    {
+      name : 'Account 1',
+      balance : 2000,
+      status : 'active'
+    },
+
+    {
+      name : 'Account 2',
+      balance : 0,
+      status : 'active'
+    }
+  ]
 }
