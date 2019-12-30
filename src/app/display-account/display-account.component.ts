@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter,ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-display-account',
@@ -10,6 +10,7 @@ export class DisplayAccountComponent implements OnInit {
   @Input() accountDetails;
   @Input() id: number;
   @Output() statusChanged = new EventEmitter();
+  @Output() balanceChanged = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -19,6 +20,13 @@ export class DisplayAccountComponent implements OnInit {
     this.statusChanged.emit({
       id  : this.id,
       status : eventData.target.value
+    })
+  }
+
+  onChangeBalance(updatedBalance : HTMLInputElement){
+    this.balanceChanged.emit({
+      id : this.id,
+      balance : updatedBalance.value
     })
   }
 

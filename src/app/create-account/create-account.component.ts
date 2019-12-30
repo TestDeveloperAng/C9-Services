@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-create-account',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccountComponent implements OnInit {
 
+  accountName = '';
+  accountBalance = '';
+  accountStatus = '';
+  @Output() serverCreated = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onCreateServer(){
+    this.serverCreated.emit({
+      name : this.accountName,
+      balance : this.accountBalance,
+      status : this.accountStatus
+    })
   }
 
 }
