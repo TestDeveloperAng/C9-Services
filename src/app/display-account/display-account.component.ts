@@ -13,4 +13,8 @@ export class DisplayAccountComponent implements OnInit {
   ngOnInit() {
   }
 
+  onstatusChange(eventData : Event){
+    console.log(eventData);
+  }
+
 }
