@@ -8,7 +8,7 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 export class DisplayAccountComponent implements OnInit {
 
   @Input() accountDetails;
-  @Input() i;
+  @Input() id: number;
   @Output() statusChanged = new EventEmitter();
   constructor() { }
 
@@ -16,11 +16,10 @@ export class DisplayAccountComponent implements OnInit {
   }
 
   onstatusChange(eventData){
-    console.log(eventData.target);
-    // this.statusChanged.emit({
-    //   id  : this.target.id
-    // })
-    // console.log(eventData.target.value);
+    this.statusChanged.emit({
+      id  : this.id,
+      status : eventData.target.value
+    })
   }
 
 }

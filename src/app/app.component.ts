@@ -21,4 +21,8 @@ export class AppComponent  {
       status : 'active'
     }
   ]
+
+  onStatusChanged(accountDataChanged){
+  this.accounts[accountDataChanged.].status = accountDataChanged.status;
+  }
 }
