@@ -23,6 +23,6 @@ export class AppComponent  {
   ]
 
   onStatusChanged(accountDataChanged){
-  this.accounts[accountDataChanged.].status = accountDataChanged.status;
+  this.accounts[accountDataChanged.id].status = accountDataChanged.status;
   }
 }
